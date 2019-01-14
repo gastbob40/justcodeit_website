@@ -1,0 +1,4 @@
+.vscode/
+site/__pycache__/
+site/site.db
+venv/
