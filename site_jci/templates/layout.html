@@ -41,7 +41,9 @@
                         <a class="nav-item nav-link" href="{{ url_for('manageAccount') }}">Gérer les comptes</a>
                         {% endif %}
                         <a class="nav-item nav-link" href="{{ url_for('new_post') }}">Nouveau post</a>
-                        <a class="nav-item nav-link" href="{{ url_for('account') }}">Son compte</a>
+                        <a href="{{ url_for('account') }}"><img class="rounded-circle account-img" src="{{ image_file }}"
+                                style="width: 2vw; height: 2vw; margin: 9px 0px 0px 10px"></a>
+                        <a class="nav-item nav-link" href="{{ url_for('account') }}">{{ current_user.username }}</a>
                         <a class="nav-item nav-link" href="{{ url_for('logout') }}">Se déconnecter</a>
                         {% else %}
                         <a class="nav-item nav-link" href="{{ url_for('login') }}">Se connecter</a>
@@ -50,36 +52,40 @@
                 </div>
             </div>
         </nav>
-        </header>
+    </header>
 
-        <main role="main" class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                    {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-                    {% endif %}
-                    {% endwith %}
-                    {% block content %}{% endblock %}
+    <main role="main" class="container ">
+        <div class="row">
+            <div class="col-md-8">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
                 </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3>Derniers posts</h3>
-                        <p class='text-muted'>Voici les derniers posts.
-                            <div class="list-group">
-                                {% for post in posts|sort(attribute='date_posted', reverse = True) %}
-                                <a href="/post/{{ post.id }}" class="list-group-item list-group-item-action">{{
-                                    post.title
-                                    }} <small class="text-muted">{{ post.date_posted.strftime('%Y %m %d - %H:%M') }}</small></a>
-                                {% endfor %}
-                            </div>
-                        </p>
-                    </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="content-section info-list">
+                    <h3>Derniers posts</h3>
+                    <p class='text-muted'>Voici les derniers posts.
+                        <div class="list-group">
+                            {% for post in posts|sort(attribute='date_posted', reverse = True) %}
+                            {% if loop.index <= 6 %}
+                            <a href="/post/{{ post.id }}" class="list-group-item list-group-item-action">{{
+                                post.title
+                                }} <small class="text-muted">{{ post.date_posted.strftime('%Y %m %d - %H:%M') }}</small></a>
+                            {% endif %}
+
+                            {% endfor %}
+                        </div>
+                    </p>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
+
 </html>

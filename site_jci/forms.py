@@ -42,12 +42,17 @@ class UpdateAccountForm(FlaskForm):
     picture = FileField('Photo de profil', validators=[FileAllowed(['jpg', 'png'])])
     permission_level = SelectField('Level de permission',
                                    choices=[("member", 'Membre du projet'), ("administrator", "Administrateur")])
+
+    password = PasswordField('Changer le mot de passe', validators=[])
+    confirm_password = PasswordField('Confirmer le mot de passe',
+                                     validators=[ EqualTo('password')])
+
     submit = SubmitField('Mettre à jour')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:
-            raise ValidationError('That username is taken. Please choose a different one.')
+            raise ValidationError("Ce nom d'utilisateur est pris. Veuillez en choisir un autre.")
 
     
 

@@ -13,6 +13,9 @@ from PIL import Image
 @app.context_processor
 def context_processor():
     posts = db.session.query(Post).all()
+    if current_user.is_authenticated:
+        image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
+        return dict(posts=posts, image_file=image_file)
     return dict(posts=posts)
 
 
@@ -91,6 +94,12 @@ def account():
             picture_file = save_picture(form.picture.data)
             current_user.image_file = picture_file
         
+        if form.password.data:
+            if form.password.data == form.confirm_password.data:
+                hashed_password = bcrypt.generate_password_hash(
+                        form.password.data).decode("utf-8")
+                current_user.password = hashed_password
+
         current_user.username = form.username.data
         db.session.commit()
         flash('Votre compte a été mis à jours !', 'success')
@@ -154,18 +163,6 @@ def new_post():
     return render_template('create_post.html', title='Nouveau Post',
                            form=form, legend='Nouveau post')
 
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route("/post/<int:post_id>")
 def post(post_id):
     post = Post.query.get_or_404(post_id)
@@ -217,3 +214,21 @@ def delete_user(user_id):
 def user_posts(username):
     user = User.query.filter_by(username=username).first_or_404()
     return render_template('user_posts.html', user=user)
+
+
+@app.route("/renit-avatar/<int:idUser>", methods=['GET', 'POST'])
+def renitAvatar(idUser):
+    # Check si la personne est co
+    if not current_user.is_authenticated:
+        return redirect(url_for("homePage"))
+
+    # Test permission
+    if current_user.permission != "administrator":
+        if current_user.id != idUser:
+            return redirect(url_for("homePage"))
+
+    user = db.session.query(User).filter_by(id=idUser).first_or_404()
+    user.image_file = "default.jpg"
+    db.session.commit()
+    
+    return redirect(url_for("account"))

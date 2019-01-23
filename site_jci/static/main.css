@@ -78,3 +78,14 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.info-list {
+  position: fixed;
+}
+
+@media (max-width: 767px) {
+  /* CSS goes here */
+  .info-list {
+    position: static;
+  }
+}

@@ -1,4 +1,4 @@
 .vscode/
-site/__pycache__/
+site_jci/__pycache__
 site/site.db
 venv/
