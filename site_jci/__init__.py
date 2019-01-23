@@ -11,5 +11,4 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-
-from site import routes
+from site_jci import routes

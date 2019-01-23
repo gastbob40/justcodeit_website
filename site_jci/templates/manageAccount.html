@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<main role="main" class="container">
+    <div class="content-section">
+        <div class="text-center" style="margin: 0 0 10% 0; padding:0 0 10% 0">
+            <h1>Voici la liste des comptes utilisateurs.</h1>
+        </div>
+        <div class="list-group">
+            {% for user in users|sort(attribute='username') %}
+            <a href="{{ url_for('account_admin', name=user.username) }}" class="list-group-item list-group-item-action disabled">{{ user.username }}</a>
+            {% endfor %}
+          </div>
+    </div>
+</main>
+
+{% endblock content %}
