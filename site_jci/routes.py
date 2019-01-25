@@ -15,7 +15,7 @@ def context_processor():
     posts = db.session.query(Post).all()
     if current_user.is_authenticated:
         image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
-        return dict(posts=posts, image_file=image_file)
+        return dict(posts=posts, image_file_user=image_file)
     return dict(posts=posts)
 
 

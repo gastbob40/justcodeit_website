@@ -49,7 +49,7 @@
         </div>
 
         <!-- DropDown profil-->
-        <div class="navbar-nav " style=" ">
+        <div class="navbar-nav ">
             {% if current_user.is_authenticated %}
 
 
@@ -57,14 +57,14 @@
                 <a class="btn btn-dark dropdown-toggle " style="margin-left:20px; background-color:rgba(30, 130, 161, 0.616);border-color: white"
                     href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <img class="rounded-circle account-img" src="{{ image_file }}" style="width: 2vw; height: 2vw; margin: 0px 0px 0px 10px">
+                    <img class="rounded-circle account-img" src="{{ image_file_user }}" style="width: 2vw; height: 2vw; margin: 0px 0px 0px 10px">
                     {{ current_user.username }}
                 </a>
 
                 <!-- DropDown Depli-->
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ url_for('account') }}">Profil</a>
-                    <a class="dropdown-item" href="#">Mes postes</a>
+                    <a class="dropdown-item" href="{{ url_for('user_posts', username=current_user.username) }}">Mes postes</a>
                     {% if current_user.permission == "administrator" %}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ url_for('register') }}">Enregister un compte</a>
