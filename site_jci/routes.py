@@ -130,6 +130,12 @@ def account_admin(name):
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
             user.image_file = picture_file
+        
+        if form.password.data:
+            if form.password.data == form.confirm_password.data:
+                hashed_password = bcrypt.generate_password_hash(
+                    form.password.data).decode("utf-8")
+                user.password = hashed_password
         user.permission = form.permission_level.data
         user.username = form.username.data
         db.session.commit()
