@@ -89,4 +89,7 @@ a.article-title:hover {
   .info-list {
     position: static;
   }
+  .rm-lt{
+    display: none;
+  }
 }

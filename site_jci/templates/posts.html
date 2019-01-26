@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<main role="main" class="container">
+    <h1 class="mb-3">Liste des posts</h1>
+    {% for post in posts|sort(attribute='date_posted', reverse = True) %}
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username) }}">{{
+                    post.author.username }}</a>
+                <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <!--<p class="article-content">{{ post.content | truncate(250) }}</p>-->
+        </div>
+    </article>
+    {% endfor %}
+</main>
+{% endblock content %}

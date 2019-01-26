@@ -159,6 +159,9 @@ def manageAccount():
 
 @app.route("/post/new", methods=['GET', 'POST'])
 def new_post():
+    if not current_user.is_authenticated:
+        return redirect(url_for("homePage"))
+
     form = PostForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
@@ -238,3 +241,8 @@ def renitAvatar(idUser):
     db.session.commit()
     
     return redirect(url_for("account"))
+
+@app.route("/posts")
+def list_posts():
+    posts = db.session.query(Post).all()
+    return render_template("posts.html", posts=posts)

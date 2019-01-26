@@ -22,66 +22,92 @@
 </head>
 
 <body>
+            <!--NAV-BAR-->
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 
-        <!-- Bouton Accueil-->
-        <a class="navbar-brand" style="margin-left:50px" href="{{ url_for('homePage') }}">JustCodeIT</a>
+        <!--Bouton ACCUEIL-->
+        <a class="navbar-brand" style="margin:0 50px 0 10px" href="{{ url_for('homePage') }}">JustCodeIT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-        <!-- Bouton New post-->
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-collapse collapse show" id="navbarsExample04" style="">
             <ul class="navbar-nav mr-auto">
+
+                <!--Nouveau Post-->
                 {% if current_user.is_authenticated %}
-                <li class="nav-item active">
+                <li class="nav-item active rm-lt">
                     <a class="nav-link" href="{{ url_for('new_post') }}">Nouveau poste<span class="sr-only">(current)</span></a>
                 </li>
                 {% endif %}
+            </ul>
+
+            <form class="form-inline my-2 my-md-0">
 
                 <!--Barre de recherche-->
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" style=" border-top-right-radius:0;border-bottom-right-radius:0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-left:-8px;border-bottom-left-radius: 0%;border-top-left-radius:0 "><i
-                        class="fa fa-search"></i></button>
+                <div class="" style="">
+                    <input class="form-control " type="search" placeholder="Rechercher" aria-label="Search4" style=" border-top-right-radius:0;border-bottom-right-radius:0">
+                    <button class="btn btn-outline-success rm-lt" type="" style="margin-left:
+                            -4px;border-bottom-left-radius: 0%;border-top-left-radius:0 "><i
+                            class="fa fa-search"></i></button>
+                </div>
+
+                <!--Case profil ORDI-->
+                <div class="navbar-nav rm-lt">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item dropdown" style="margin-right:50px;">
+                        <a class="btn btn-dark dropdown-toggle " style="margin-left:20px; background-color:#5f788a ;border-color: white"
+                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img class="rounded-circle account-img" src="{{ image_file_user }}" style="width: 2vw; height: 2vw; margin: 0px 0px 0px 10px">
+                            {{ current_user.username }}
+                            {% endif %}
+                        </a>
+                        <!-- DropDown Depli-->
+                        {% if current_user.is_authenticated %}
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url_for('account') }}">Profil</a>
+                            <a class="dropdown-item" href="{{ url_for('user_posts', username=current_user.username) }}">Mes
+                                postes</a>
+                            {% if current_user.permission == "administrator" %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url_for('register') }}">Enregister un compte</a>
+                            <a class="dropdown-item" href="{{ url_for('manageAccount') }}">Gérer les comptes</a>
+                            {% endif %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url_for('logout') }}">Se déconnecter</a>
+                        </div>
+                    </li>
+                    {% else %}
+                    <a class="nav-item nav-link" style="margin-left:50px;" href="{{ url_for('login') }}">Se connecter</a>
+                    {% endif %}
+                </div>
 
             </form>
-        </div>
-
-        <!-- DropDown profil-->
-        <div class="navbar-nav ">
-            {% if current_user.is_authenticated %}
-
-
-            <li class="nav-item dropdown" style="margin-right:50px;">
-                <a class="btn btn-dark dropdown-toggle " style="margin-left:20px; background-color:rgba(30, 130, 161, 0.616);border-color: white"
-                    href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <img class="rounded-circle account-img" src="{{ image_file_user }}" style="width: 2vw; height: 2vw; margin: 0px 0px 0px 10px">
-                    {{ current_user.username }}
-                </a>
-
-                <!-- DropDown Depli-->
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ url_for('account') }}">Profil</a>
-                    <a class="dropdown-item" href="{{ url_for('user_posts', username=current_user.username) }}">Mes postes</a>
-                    {% if current_user.permission == "administrator" %}
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ url_for('register') }}">Enregister un compte</a>
-                    <a class="dropdown-item" href="{{ url_for('manageAccount') }}">Gérer les comptes</a>
-                    {% endif %}
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ url_for('logout') }}">Se déconnecter</a>
-                </div>
-            </li>
-
-            {% else %}
-            <a class="nav-item nav-link" style="margin-left:50px;" href="{{ url_for('login') }}">Se connecter</a>
-            {% endif %}
+            <!--Case profil TEL-->
+            <div class="navbar-nav d-sm-none" style="width: 100%">
+                {% if current_user.is_authenticated %}
+                <a class="nav-link" href="{{ url_for('new_post') }}">Nouveau poste<span class="sr-only">(current)</span></a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link" href="{{ url_for('account') }}">Profil</a>
+                <a class="nav-link" href="{{ url_for('user_posts', username=current_user.username) }}">Mes postes</a>
+                {% if current_user.permission == "administrator" %}
+                <div class="dropdown-divider"></div>
+                <a class="nav-link" href="{{ url_for('register') }}">Enregister un compte</a>
+                <a class="nav-link" href="{{ url_for('manageAccount') }}">Gérer les comptes</a>
+                {% endif %}
+                <div class="dropdown-divider"></div>
+                <a class="nav-link" href="{{ url_for('logout') }}">Se déconnecter</a>
+                {% else %}
+                <a class="nav-item nav-link" style="margin-left:50px;" href="{{ url_for('login') }}">Se connecter</a>
+                {% endif %}
+            </div>
         </div>
     </nav>
 
-
+      
+    <!--.d-sm-none-->
     <main role="main" class="container ">
         <div class="row">
             <div class="col-md-8">
@@ -108,6 +134,7 @@
                                 {% endif %}
                                 {% endfor %}
                         </div>
+                        <a class="text-muted" href="{{ url_for('list_posts') }}"><small>Voir plus</small></smal></a>
                     </p>
                 </div>
             </div>
