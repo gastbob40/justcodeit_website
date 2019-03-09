@@ -125,7 +125,7 @@
             <div class="col-md-4">
                 <div class="content-section info-list">
                     <h3>Derniers posts</h3>
-                    <p class='text-muted'>Voici les derniers posts.
+                    <p class='text-muted'>Actualités du projet
                         <div class="list-group">
                             {% for post in posts|sort(attribute='date_posted', reverse = True) %}
                             {% if loop.index <= 6 %} <a href="/post/{{ post.id }}" class="list-group-item list-group-item-action">{{
