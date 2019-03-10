@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+<main role="main" class="container">
+    <div class="row">
+        <div class="col">
+            <div class="content-section">
+                <div>
+                    <center>
+                        <img src="{{ url_for('static', filename='members_pics/quentin.briolant.jpg' )}}" name="aboutme"
+                            width="100" height="100" border="0" class="rounded-circle"></a>
+                        <h3 class="media-heading">Quentin Briolant</h3>
+                        <small>quentin.briolant@epita.fr</small><br>
+                        <span class="badge badge-danger">Chef de projet</span>
+                        <span class="badge badge-success">Responsable réseaux</span>
+                        <span class="badge badge-info">Responsable site / backend</span>
+                    </center>
+                    <hr>
+                    <center>
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo
+                            a,
+                            vulputate
+                            vel tellus.</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content-section">
+                <div>
+                    <center>
+                        <img src="{{ url_for('static', filename='members_pics/damien.champeyroux.jpg' )}}"
+                            name="aboutme" width="100" height="100" border="0" class="rounded-circle"></a>
+                        <h3 class="media-heading">Damien Champeyroux</h3>
+                        <small>damien.champeyroux@epita.fr</small><br>
+                        <span class="badge badge-primary">Responsable graphisme</span>
+                        <span class="badge badge-secondary">Responsable maps</span>
+                        <span class="badge badge-info">Responsable site / frontend</span>
+                    </center>
+                    <hr>
+                    <center>
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo
+                            a,
+                            vulputate
+                            vel tellus.</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <div>
+            <center>
+                <img src="{{ url_for('static', filename='members_pics/seraia.cohen.jpg' )}}" name="aboutme" width="100"
+                    height="100" border="0" class="rounded-circle"></a>
+                <h3 class="media-heading">Seraïa Cohen</h3>
+                <small>seraia.cohen@epita.fr</small><br>
+                <span class="badge badge-warning">Responsable organisation</span>
+                <span class="badge badge-info">Responsable forums</span>
+                <span class="badge badge-secondary">Responsable rapports</span>
+            </center>
+            <hr>
+            <center>
+                <p class="text-left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a,
+                    vulputate
+                    vel tellus.</p>
+            </center>
+        </div>
+    </div>
+
+</main>
+{% endblock content %}

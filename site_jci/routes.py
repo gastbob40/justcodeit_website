@@ -246,3 +246,7 @@ def renitAvatar(idUser):
 def list_posts():
     posts = db.session.query(Post).all()
     return render_template("posts.html", posts=posts)
+
+@app.route("/members")
+def membersPage():
+    return render_template("ourMember.html")
