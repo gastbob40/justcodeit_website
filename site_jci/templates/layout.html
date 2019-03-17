@@ -52,6 +52,18 @@
                     <a class="nav-link" href="{{ url_for('membersPage') }}">L'équipe<span
                             class="sr-only">(current)</span></a>
                 </li>
+
+                <li class="nav-item active rm-lt" style="padding: 20px 20px 20px 20px; "></li>
+                <li class="nav-item active rm-lt">
+                    <a class="nav-link" href="{{ url_for('progressPage') }}">Avancée<span
+                            class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active rm-lt" style="padding: 20px 20px 20px 20px; "></li>
+                <li class="nav-item active rm-lt">
+                    <a class="nav-link" href="{{ url_for('downloadPage') }}">Téléchargement<span
+                            class="sr-only">(current)</span></a>
+                </li>
             </ul>
 
             <form class="form-inline my-2 my-md-0">
@@ -104,6 +116,9 @@
             <!--Case profil TEL-->
             <div class="navbar-nav d-sm-none" style="width: 100%">
                 <a class="nav-link" href="{{ url_for('membersPage') }}">L'équipe</a>
+                <a class="nav-link" href="{{ url_for('progressPage') }}">Avancée</a>
+                <a class="nav-link" href="{{ url_for('downloadPage') }}">Téléchargement</a>
+                <div class="dropdown-divider"></div>
                 {% if current_user.is_authenticated %}
                 <a class="nav-link" href="{{ url_for('new_post') }}">Nouveau poste<span
                         class="sr-only">(current)</span></a>
