@@ -254,3 +254,7 @@ def membersPage():
 @app.route("/progress")
 def progressPage():
     return render_template("progress.html")
+
+@app.route("/download")
+def downloadPage():
+    return render_template("download.html")
