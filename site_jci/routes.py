@@ -250,3 +250,7 @@ def list_posts():
 @app.route("/members")
 def membersPage():
     return render_template("ourMember.html")
+
+@app.route("/progress")
+def progressPage():
+    return render_template("progress.html")

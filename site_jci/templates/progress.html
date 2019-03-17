@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block title%} JustCodeIT - Avancée {% endblock%}
+
+{% block content %}
+<main role="main" class="container">
+    <div class="content-section">
+        <div class="text-center" style="margin: 0 0 5% 0; padding: 10% 0 0 0">
+            <h1>Avancée du projet</h1>
+        </div>
+        <div class="small text-muted">La couleur verte correspond à la première soutenance, la couleur jaune correspond
+            à la deuxième soutenance, tandis que la couleur rouge correspond à la dernière soutenance.</div>
+        <!--
+            Penser à modifier la case "width" et la valeur entre les deux divs pour mettre à jour les valeurs
+        -->
+        <br>
+        <h5>Interface</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Intéraction utilisateur</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Site internet</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Graphisme</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Multijoueur</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Énigmes multis</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Énigmes solos</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <br>
+        <h5>Animations joueurs</h5>
+        <div class="progress">
+            <div class="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+            <div class="bg-warning progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+    </div>
+</main>
+
+
+{% endblock content %}
