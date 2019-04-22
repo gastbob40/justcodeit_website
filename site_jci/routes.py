@@ -258,3 +258,7 @@ def progressPage():
 @app.route("/download")
 def downloadPage():
     return render_template("download.html")
+
+@app.route("/contact-us")
+def contactUs():
+    return render_template("contact-us.html")
