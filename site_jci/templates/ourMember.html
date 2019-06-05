@@ -1,74 +1,97 @@
 {% extends "layout.html" %}
 {% block content %}
-<main role="main" class="container">
-    <div class="row">
-        <div class="col">
-            <div class="content-section">
-                <div>
-                    <center>
-                        <img src="{{ url_for('static', filename='members_pics/quentin.briolant.jpg' )}}" name="aboutme"
-                            width="100" height="100" border="0" class="rounded-circle"></a>
-                        <h3 class="media-heading">Quentin Briolant</h3>
-                        <small>quentin.briolant@epita.fr</small><br>
-                        <span class="badge badge-danger">Chef de projet</span>
-                        <span class="badge badge-success">Responsable réseaux</span>
-                        <span class="badge badge-warning">Responsable interface</span>
-                        <span class="badge badge-info">Responsable site / backend</span>
-                    </center>
-                    <hr>
-                    <center>
-                        <p class="text-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan nulla ac erat
-                            maximus, id congue arcu pharetra. Suspendisse consequat mi pellentesque massa maximus, id
-                            aliquam sem convallis.</p>
-                    </center>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col">
+                <div class="content-section">
+                    <div>
+                        <center>
+                            <img src="{{ url_for('static', filename='members_pics/quentin.briolant.jpg' ) }}"
+                                 name="aboutme"
+                                 width="100" height="100" border="0" class="rounded-circle"></a>
+                            <h3 class="media-heading">Quentin Briolant</h3>
+                            <small>quentin.briolant@epita.fr</small>
+                            <br>
+                            <span class="badge badge-danger">Chef de projet</span>
+                            <span class="badge badge-success">Responsable réseaux</span>
+                            <span class="badge badge-warning">Responsable interface</span>
+                            <span class="badge badge-info">Responsable site / backend</span>
+                        </center>
+                        <hr>
+                        <center>
+                            <p class="text-left">
+                                Je me présente, je m’appelle Quentin. Ayant un père informaticien, j’ai pu rapidement
+                                découvrir l’informatique, même si cela restait vague. Cependant, j’ai
+                                effectué mon stage de 3e dans une entreprise en informatique, me permettant de
+                                découvrir réellement cette discipline.</p>
+                            <p class="text-left">
+                                <a href="#">
+                                    <small>Voir plus</small>
+                                </a>
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="content-section">
+                    <div>
+                        <center>
+                            <img src="{{ url_for('static', filename='members_pics/damien.champeyroux.jpg' ) }}"
+                                 name="aboutme" width="100" height="100" border="0" class="rounded-circle"></a>
+                            <h3 class="media-heading">Damien Champeyroux</h3>
+                            <small>damien.champeyroux@epita.fr</small>
+                            <br>
+                            <span class="badge badge-primary">Responsable graphisme / designer</span>
+                            <span class="badge badge-secondary">Responsable maps</span>
+                            <span class="badge badge-info">Responsable site / frontend</span>
+                            <span class="badge badge-success">Responsable portal</span>
+                        </center>
+                        <hr>
+                        <center>
+                            <p class="text-left">
+                                Je me présente : mon surnom est Dam’s. J’ai découvert l’informatique assez tard,
+                                vers la fin du collège. J’ai su immédiatement que je travaillerai dans ce domaine
+                                plus tard. En première j’avais donc choisi d’aller dans la filière STI2D option SIN
+                                qui été plus orientée vers l’informatique, et je ne regrette pas.</p>
+                            <p class="text-left">
+                                <a href="#">
+                                    <small>Voir plus</small>
+                                </a>
+                            </p>
+                        </center>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="content-section">
-                <div>
-                    <center>
-                        <img src="{{ url_for('static', filename='members_pics/damien.champeyroux.jpg' )}}"
-                            name="aboutme" width="100" height="100" border="0" class="rounded-circle"></a>
-                        <h3 class="media-heading">Damien Champeyroux</h3>
-                        <small>damien.champeyroux@epita.fr</small><br>
-                        <span class="badge badge-primary">Responsable graphisme / designer</span>
-                        <span class="badge badge-secondary">Responsable maps</span>
-                        <span class="badge badge-info">Responsable site / frontend</span>
-                        <span class="badge badge-success">Responsable portal</span>
-                    </center>
-                    <hr>
-                    <center>
-                        <p class="text-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan nulla ac erat
-                            maximus, id congue arcu pharetra. Suspendisse consequat mi pellentesque massa maximus, id
-                            aliquam sem convallis.</p>
-                    </center>
-                </div>
+        <div class="content-section">
+            <div>
+                <center>
+                    <img src="{{ url_for('static', filename='members_pics/seraia.cohen.jpg' ) }}" name="aboutme"
+                         width="100"
+                         height="100" border="0" class="rounded-circle"></a>
+                    <h3 class="media-heading">Seraïa Cohen</h3>
+                    <small>seraia.cohen@epita.fr</small>
+                    <br>
+                    <span class="badge badge-warning">Responsable organisation</span>
+                    <span class="badge badge-info">Responsable forums</span>
+                    <span class="badge badge-secondary">Responsable rapports</span>
+                </center>
+                <hr>
+                <center>
+                    <p class="text-left">
+                        Je me présente je m’appelle Seraïa, mon surnom a toujours été Yaya. Mon père
+                        est informaticien depuis une vingtaine d’année, il m’a donc montré ses centaines
+                        et centaines de lignes de code et j’ai toujours admiré cela. J’ai donc été en STI2D
+                        pour en découvrir plus sur ce nouveau monde.</p>
+                    <p class="text-left">
+                        <a href="#">
+                            <small>Voir plus</small>
+                        </a>
+                    </p>
+                </center>
             </div>
         </div>
-    </div>
-    <div class="content-section">
-        <div>
-            <center>
-                <img src="{{ url_for('static', filename='members_pics/seraia.cohen.jpg' )}}" name="aboutme" width="100"
-                    height="100" border="0" class="rounded-circle"></a>
-                <h3 class="media-heading">Seraïa Cohen</h3>
-                <small>seraia.cohen@epita.fr</small><br>
-                <span class="badge badge-warning">Responsable organisation</span>
-                <span class="badge badge-info">Responsable forums</span>
-                <span class="badge badge-secondary">Responsable rapports</span>
-            </center>
-            <hr>
-            <center>
-                <p class="text-left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan nulla ac erat
-                    maximus, id congue arcu pharetra. Suspendisse consequat mi pellentesque massa maximus, id
-                    aliquam sem convallis.</p>
-            </center>
-        </div>
-    </div>
 
-</main>
+    </main>
 {% endblock content %}
